@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8" />
@@ -8,32 +8,76 @@
     <link rel="shortcut icon" href="favicon.png" />
     <link href="style.css" rel="stylesheet" />
     <title>Furni</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=close" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #nav-menu:active {
+            display: flex;
+        }
+    </style>
 </head>
 
-<body>
+<body class="relative">
     <!-- Start Header/Navigation -->
     <nav class="bg-[#3B5D50] text-gray-400">
-        <div class="max-w-screen-2xl mx-auto flex justify-between items-center py-4 md:px-32">
-            <a class="text-4xl text-white font-semibold" href="index.html">Furni<span>.</span></a>
+        <div class="max-w-screen-2xl md:mx-auto mx-10 flex justify-between items-center py-6 md:px-32 ">
+            <a class="text-4xl text-white font-semibold" href="index.html">Chair Store</a>
 
-            <div class="flex gap-10" id="">
-                <ul class="flex gap-10">
+            <button id="hamburger" class="active:scale-95 transition-all md:hidden">
+                <img id="menu" class="w-12" src="/images/menu.png" alt="">
+                <img id="close" class="w-12 hidden" src="/images/close.png" alt="">
+            </button>
+
+            <div id="nav-menu" class="hidden md:flex gap-10 flex-col md:flex-row" id="">
+                <ul class="flex gap-10 flex-col md:flex-row">
                     <li class="text-white hover:text-white active:scale-95 hover:border-b-2 transition-all"><a
                             href="index.html">Home</a></li>
-                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a href="#">Shop</a>
+                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#shop">Shop</a>
                     </li>
-                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a href="#">About
+                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#aboutus">About
                             us</a></li>
                     <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a
-                            href="#">Services</a></li>
-                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a href="#">Blog</a>
+                            href="#blogs">Blog</a>
                     </li>
-                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a href="#">Contact
+                    <li class="hover:text-white active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#footer">Contact
                             us</a></li>
                 </ul>
-
                 <ul class="flex gap-10">
+                    <li class="active:scale-95 transition-all">
+                        <a href=""><img src="images/user.svg" /></a>
+                    </li>
+                    <li class="active:scale-95 transition-all">
+                        <ahref=""><img src="images/cart.svg" /></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="nav-menu-mobile"
+                class="hidden bg-[#3B5D50] text-white border p-3 rounded-lg md:hidden gap-3 flex-col md:flex-row absolute right-10 top-20"
+                id="">
+                <ul class="flex gap-2 flex-col md:flex-row">
+                    <li class="hover:text-[#F8B810] active:scale-95 hover:border-b-2 transition-all"><a
+                            href="index.html">Home</a></li>
+                    <li class="hover:text-[#F8B810] active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#shop">Shop</a>
+                    </li>
+                    <li class="hover:text-[#F8B810] active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#aboutus">About
+                            us</a></li>
+                    <li class="hover:text-[#F8B810] active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#blogs">Blog</a>
+                    </li>
+                    <li class="hover:text-[#F8B810] active:scale-95 hover:border-b-2 transition-all"><a
+                            href="#footer">Contact
+                            us</a></li>
+                </ul>
+                <ul class="flex justify-between mt-5">
                     <li class="active:scale-95 transition-all">
                         <a href=""><img src="images/user.svg" /></a>
                     </li>
@@ -48,8 +92,8 @@
 
     <!-- Start Hero Section -->
     <div class="bg-[#3B5D50] text-white">
-        <div class="max-w-screen-2xl mx-auto px-32">
-            <div class="flex justify-between items-center">
+        <div class="md:max-w-screen-2xl md:mx-auto md:px-32 p-10">
+            <div class="flex justify-between items-center flex-col md:flex-row">
 
                 <div class="">
                     <div class="flex flex-col gap-10">
@@ -61,12 +105,15 @@
                             velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
                         </p>
                         <div>
-                            <button href="#" class="bg-[#F8B810] hover:bg-transparent border-2 border-transparent hover:border-white hover:text-white  text-black font-semibold px-6 py-4 rounded-full active:scale-95 transition-all mr-2">Shop Now</button>
-                            <button href="#" class="hover:bg-[#F8B810] hover:text-black  font-semibold px-6 py-4 rounded-full border-2 active:scale-95 transition-all">Explore</button>
+                            <button href="#"
+                                class="bg-[#F8B810] hover:bg-transparent border-2 border-transparent hover:border-white hover:text-white  text-black font-semibold px-6 py-4 rounded-full active:scale-95 transition-all mr-2">Shop
+                                Now</button>
+                            <button href="#"
+                                class="hover:bg-[#F8B810] hover:text-black  font-semibold px-6 py-4 rounded-full border-2 active:scale-95 transition-all">Explore</button>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="">
                     <div class="relative">
                         <img class="absolute -right-10 top-5" src="/images/dots-green.svg" alt="">
@@ -80,9 +127,9 @@
     <!-- End Hero Section -->
 
     <!-- Start Product Section -->
-    <div class="flex justify-center items-center py-28">
-        <div class="max-w-screen-2xl mx-auto px-32">
-            <div class="grid grid-cols-4 gap-4">
+    <div id="shop" class="flex justify-center items-center py-28 ">
+        <div class="md:max-w-screen-2xl md:mx-auto md:px-32 mx-10">
+            <div class="grid md:grid-cols-4 grid-cols-1 gap-4">
                 <!-- Start Column 1 -->
                 <div id="explore" class="flex flex-col gap-8">
                     <h2 class="text-3xl text-black font-medium">Crafted with excellent material.</h2>
@@ -91,7 +138,8 @@
                         velit. Aliquam vulputate velit imperdiet dolor tempor tristique.
                     </p>
                     <p class="">
-                        <a href="#explore" class="bg-black text-white px-6 py-3 rounded-full hover:bg-transparent border-2 border-transparent hover:border-black hover:text-black transition-all">
+                        <a href="#explore"
+                            class="bg-black text-white px-6 py-3 rounded-full hover:bg-transparent border-2 border-transparent hover:border-black hover:text-black transition-all">
                             Explore
                         </a>
                     </p>
@@ -133,9 +181,9 @@
     <!-- End Product Section -->
 
     <!-- Start Why Choose Us Section -->
-    <div class="">
-        <div class="max-w-screen-2xl mx-auto px-32">
-            <div class="flex gap-5 justify-between items-center ">
+    <div id="aboutus" class="">
+        <div class="md:max-w-screen-2xl md:mx-auto md:px-32 mx-10">
+            <div class="flex gap-5 justify-between items-center flex-col md:flex-row ">
 
                 <div class="flex flex-col gap-3">
                     <h2 class="text-3xl text-black font-medium">Why Choose Us</h2>
@@ -201,7 +249,8 @@
 
                 <div class="border ">
                     <div class=" flex justify-center items-center overflow-hidden rounded-xl ">
-                        <img src="images/why-choose-us-img.jpg" alt="Image" class="hover:scale-110 transition-all rounded-xl" />
+                        <img src="images/why-choose-us-img.jpg" alt="Image"
+                            class="hover:scale-110 transition-all rounded-xl" />
                     </div>
                 </div>
             </div>
@@ -211,8 +260,8 @@
 
     <!-- Start Popular Product -->
     <div class="">
-        <div class="max-w-screen-2xl mx-auto px-32 ">
-            <div class="flex justify-center items-center gap-10 min-h-80">
+        <div class="md:max-w-screen-2xl md:mx-auto md:px-32 m-10">
+            <div class="flex justify-center items-center gap-10 min-h-80 flex-col md:flex-row ">
 
                 <div class="">
                     <div class="flex justify-center items-center gap-2">
@@ -225,7 +274,8 @@
                                 Donec facilisis quam ut purus rutrum lobortis. Donec vitae
                                 odio
                             </p>
-                            <p><a class="hover:text-black hover:border-b border-black transition-all" href="#">Read More</a></p>
+                            <p><a class="hover:text-black hover:border-b border-black transition-all" href="#">Read
+                                    More</a></p>
                         </div>
                     </div>
                 </div>
@@ -241,7 +291,8 @@
                                 Donec facilisis quam ut purus rutrum lobortis. Donec vitae
                                 odio
                             </p>
-                            <p><a class="hover:text-black hover:border-b border-black transition-all" href="#">Read More</a></p>
+                            <p><a class="hover:text-black hover:border-b border-black transition-all" href="#">Read
+                                    More</a></p>
                         </div>
                     </div>
                 </div>
@@ -257,7 +308,8 @@
                                 Donec facilisis quam ut purus rutrum lobortis. Donec vitae
                                 odio
                             </p>
-                            <p><a class="hover:text-black hover:border-b border-black transition-all" href="#">Read More</a></p>
+                            <p><a class="hover:text-black hover:border-b border-black transition-all" href="#">Read
+                                    More</a></p>
                         </div>
                     </div>
                 </div>
@@ -268,26 +320,28 @@
     <!-- End Popular Product -->
 
     <!-- Start Blog Section -->
-    <div class="">
-        <div class="max-w-screen-2xl mx-auto px-32 pb-36">
+    <div id="blogs" class="">
+        <div class="md:max-w-screen-2xl md:mx-auto md:px-32 pb-36">
 
-            <div class="text-black flex justify-between items-center py-10">
+            <div class="text-black flex justify-between items-center py-10 md:flex-row flex-col">
                 <div class="">
                     <h2 class="text-3xl font-medium ">Recent Blog</h2>
                 </div>
                 <div class="">
-                    <a href="#" class="border-b-2 border-black hover:border-transparent font-semibold translate-x-0">View All Posts</a>
+                    <a href="#"
+                        class="border-b-2 border-black hover:border-transparent font-semibold translate-x-0">View All
+                        Posts</a>
                 </div>
             </div>
 
-            <div class="grid grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-3 mx-10 grid-cols-1 gap-6">
 
                 <div class="">
                     <div class="">
                         <div class="overflow-hidden rounded-2xl">
                             <a href="#" class=""><img src="images/post-1.jpg" alt="Image"
-                                class="rounded-2xl hover:scale-110 transition-all" /></a>
-                            </div>
+                                    class="rounded-2xl hover:scale-110 transition-all" /></a>
+                        </div>
                         <div class="p-5">
                             <h3><a class="font-semibold text-black" href="#">First Time Home Owner Ideas</a></h3>
                             <div class="mt-2">
@@ -302,8 +356,8 @@
                     <div class="">
                         <div class="overflow-hidden rounded-2xl">
                             <a href="#" class=""><img src="images/post-2.jpg" alt="Image"
-                                class="rounded-2xl hover:scale-110 transition-all" /></a>
-                            </div>
+                                    class="rounded-2xl hover:scale-110 transition-all" /></a>
+                        </div>
                         <div class="p-5">
                             <h3><a class="font-semibold text-black" href="#">How To Keep Your Furniture Clean</a></h3>
                             <div class="mt-2">
@@ -318,10 +372,11 @@
                     <div class="">
                         <div class="overflow-hidden rounded-2xl">
                             <a href="#" class=""><img src="images/post-3.jpg" alt="Image"
-                                class="rounded-2xl hover:scale-110 transition-all" /></a>
-                            </div>
+                                    class="rounded-2xl hover:scale-110 transition-all" /></a>
+                        </div>
                         <div class="p-5">
-                            <h3><a class="font-semibold text-black" href="#">Small Space Furniture Apartment Ideas</a></h3>
+                            <h3><a class="font-semibold text-black" href="#">Small Space Furniture Apartment Ideas</a>
+                            </h3>
                             <div class="mt-2">
                                 <span>by <a class="text-black font-semibold" href="#">Kristin Watson</a></span>
                                 <span>on <a class="text-black font-semibold" href="#">Dec 12, 2021</a></span>
@@ -335,43 +390,46 @@
     <!-- End Blog Section -->
 
     <!-- Start Footer Section -->
-    <footer class="bg-white">
-        <div class="max-w-screen-2xl mx-auto px-28 relative ">
+    <footer id="footer" class="bg-white">
+        <div class="md:max-w-screen-2xl md:mx-auto md:px-28 relative mx-10 ">
             <div class="">
                 <img src="images/sofa.png" alt="Image" class="w-96 absolute right-0 -top-28 " />
             </div>
 
             <div class="">
-                <div class="py-20">
+                <div class="md:py-20  pt-56">
                     <div class="">
                         <h3 class="flex items-center text-black text-lg font-medium">
                             <span class="me-1"><img src="images/envelope-outline.svg" alt="Image"
                                     class="img-fluid" /></span><span>Subscribe to Newsletter</span>
                         </h3>
 
-                        <form action="#" class="flex items-center gap-4 mt-4">
+                        <form class="flex items-center gap-4 mt-4 md:flex-row flex-col">
                             <div class="">
-                                <input type="text" class="border-2 px-2 py-3 rounded-lg border-gray-400 " placeholder="Enter your name" />
+                                <input type="text" class="border-2 px-2 py-3 rounded-lg border-gray-400 "
+                                    placeholder="Enter your name" />
                             </div>
                             <div class="">
-                                <input type="email" class="border-2 px-2 py-3 rounded-xl border-gray-400 " placeholder="Enter your email" />
+                                <input type="email" class="border-2 px-2 py-3 rounded-xl border-gray-400 "
+                                    placeholder="Enter your email" />
                             </div>
                             <div class="">
-                                <button class="bg-green-900 text-white font-semibold px-6 py-3 rounded-xl hover:bg-green-800">Send</button>
+                                <button
+                                    class="bg-green-900 text-white font-semibold px-6 py-3 rounded-xl hover:bg-green-800">Send</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-3">
+            <div class="grid md:grid-cols-3 grid-cols-1">
                 <div class="col-span-1 grid gap-5">
                     <div class="">
-                        <a href="#" class="text-3xl text-black font-medium">Furni<span>.</span></a>
+                        <a href="#" class="text-3xl text-black font-medium">Chair Store</a>
                     </div>
                     <p class="mb-4">
-                        Donec facilisis quam ut purus rutrum lobortis. Donec vitae <br> odio
-                        quis nisl dapibus malesuada. Nullam ac aliquet velit. <br> Aliquam
+                        Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
+                        quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
                         vulputate velit imperdiet dolor tempor tristique. Pellentesque
                         habitant
                     </p>
@@ -392,39 +450,81 @@
                     </ul>
                 </div>
 
-                <div class="col-span-2">
-                    <div class="grid grid-cols-4">
+                <div class="col-span-2 pb-10" >
+                    <div class="grid md:grid-cols-4 grid-cols-2 gap-5 ">
                         <div class="">
                             <ul class="grid gap-4">
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">About us</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Services</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Blog</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Contact us</a></li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">About us</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Services</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Contact us</a>
+                                </li>
                             </ul>
                         </div>
 
                         <div class="">
                             <ul class="grid gap-4">
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Support</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Knowledge base</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Live chat</a></li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Jobs</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Our team</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Leadership</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Privacy Policy</a>
+                                </li>
                             </ul>
                         </div>
 
                         <div class="">
                             <ul class="grid gap-4">
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Jobs</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Our team</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Leadership</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Privacy Policy</a></li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Support</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Knowledge base</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Live chat</a>
+                                </li>
                             </ul>
                         </div>
 
                         <div class="">
                             <ul class="grid gap-4">
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Nordic Chair</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Kruzo Aero</a></li>
-                                <li class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 transition-all"><a href="#">Ergonomic Chair</a></li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Nordic Chair</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Kruzo Aero</a>
+                                </li>
+                                <li
+                                    class="hover:text-[#3B5D50] hover:font-semibold active:scale-95 hover:underline transition-all">
+                                    <a href="#">Ergonomic Chair</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -432,19 +532,17 @@
             </div>
 
             <div class="border-t py-10">
-                <div class="flex justify-between items-center">
+                <div class="flex justify-between items-center md:flex-row flex-col gap-10">
                     <div class="">
                         <p class="">
-                            Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear())
-                            </script>
-                            . All Rights Reserved. &mdash; Designed with love by <br>
-                            <a class="font-semibold text-black" href="https://www.facebook.com/nujhatulislamnirob.khandokar">MD. NUJHATUL ISLAM NIROB</a>
+                            Copyright &copy; 2025. All Rights Reserved. &mdash; Designed with love by <br>
+                            <a class="font-semibold text-black"
+                                href="https://www.facebook.com/nujhatulislamnirob.khandokar">MD. NUJHATUL ISLAM
+                                NIROB</a>
                         </p>
                     </div>
                     <div class="">
-                        <ul class="">
+                        <ul class="flex justify-between items-center gap-10">
                             <li class=""><a href="#">Terms &amp; Conditions</a></li>
                             <li class=""><a href="#">Privacy Policy</a></li>
                         </ul>
@@ -454,6 +552,33 @@
         </div>
     </footer>
     <!-- End Footer Section -->
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menuImg = document.getElementById('menu');
+        const closeImg = document.getElementById('close');
+        const navMenu = document.getElementById('nav-menu-mobile');
+
+        var toggle = true;
+
+        hamburger.addEventListener('click', () => {
+
+            if (toggle === true) {
+                navMenu.classList.remove('hidden');
+                menuImg.classList.add('hidden');
+                closeImg.classList.remove('hidden');
+                toggle = false;
+
+            } else {
+                navMenu.classList.add('hidden');
+                menuImg.classList.remove('hidden');
+                closeImg.classList.add('hidden');
+                toggle = true;
+            }
+
+        })
+
+    </script>
 </body>
 
 </html>
